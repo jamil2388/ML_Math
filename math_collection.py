@@ -15,6 +15,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 ### 1) Linear Algebra (5.1.X)
+
+# Vector Plotting
 sns.set()
 
 v1 = np.array([0, 0, 2, 3])
@@ -71,4 +73,51 @@ print(f'random_int_matrix = \n{random_int_matrix}\n')
 # Transpose
 random_int_matrix_t = np.transpose(random_int_matrix)
 print(f'random_int_matrix_t = \n{random_int_matrix_t}\n')
+
+# Matrix Arithmetic
+m1 = np.array([[1, 5], [-4, 2], [3, 10]])
+m2 = np.array([[4, 1], [7, 6], [9, 2]])
+rand1 = np.random.randint(50, size = (3, 5))
+rand2 = np.random.randint(50, size = (3, 5))
+print(f'm1 = \n{m1}\n')
+print(f'm2 = \n{m2}\n')
+print(f'rand1 = \n{rand1}\n')
+print(f'rand2 = \n{rand2}\n')
+print(f'shape of m1 and m2 = {m1.shape}, {m2.shape}')
+
+# Addition, Subtraction
+sum = m1 + m2
+rsum = rand1 + rand2
+# this is the same as rsum
+rsum_np = np.add(rand1, rand2)
+diff = m1 - m2
+rdiff = rand1 - rand2
+# this is the same as rdiff
+rdiff_np = np.subtract(rand1, rand2)
+print(f'sum = \n{sum}\n')
+print(f'diff = \n{diff}\n')
+print(f'rsum = \n{rsum}\n')
+print(f'rsum_np = \n{rsum_np}\n')
+print(f'rdiff = \n{rdiff}')
+print(f'rdiff_np = \n{rdiff_np}')
+
+# Multiplication (Both scalar and matrix)
+rand1 = np.random.randint(20, size = (3, 5))
+rand2 = np.random.randint(20, size = (5, 3))
+print(f'm1 = \n{m1}\n')
+print(f'm2 = \n{m2}\n')
+print(f'rand1 = \n{rand1}\n')
+print(f'rand2 = \n{rand2}\n')
+prod = 5 * m1
+prod_np = np.multiply(5, m1)
+print(f'prod = \n{prod}\n')
+print(f'prod_np = \n{prod_np}\n')
+
+# for matrix multiplcation of two matrices, np.dot has to be used
+matrix_product = np.dot(rand1, rand2)
+print(f'matrix_product of shape {matrix_product.shape} = \n{matrix_product}\n')
+
+# Element wise Matrix Multiplication (Need to be same dimensional unlike matrix multiplication)
+matrix_product2 = np.multiply(m1, m2)
+print(f'matrix_product2 of shape {matrix_product2.shape} = \n{matrix_product2}\n')
 
